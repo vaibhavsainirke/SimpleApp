@@ -1,0 +1,168 @@
+<div class="body">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-6">
+        <h4 *ngIf="closeToggle == true">District Details</h4>
+        <h4 *ngIf="inputToggle == true">Edit Details</h4>
+      </div>
+      <div class="col-6 text-end">
+        <button class="btn" routerLink="/districtmain">
+          <span class="icon-i">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="row mt-3 state-body">
+      <div class="col-8">
+        <div class="position">
+          <!-- ===================btn1======================= -->
+          <span *ngIf="closeToggle == true">
+            <button type="button" (click)="editState()" class="btn">
+              <span class="icon-i">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-pencil"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+          <!-- ===================btn2======================= -->
+
+          <span *ngIf="inputToggle == true">
+            <button type="button" (click)="saveData()" class="btn">
+              <span class="icon-i">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-save2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v4.5h2a.5.5 0 0 1 .354.854l-2.5 2.5a.5.5 0 0 1-.708 0l-2.5-2.5A.5.5 0 0 1 5.5 6.5h2V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+          <!-- ===================btn3======================= -->
+
+          <span *ngIf="inputToggle == true">
+            <button type="button" (click)="editStateCancel()" class="btn">
+              <span class="icon-i">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-backspace-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+          <!-- ===================btn4======================= -->
+
+          <span *ngIf="closeToggle == true">
+            <button type="button" class="btn">
+              <span class="icon-i close-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+
+        <span class="state-body-item">
+          <p><strong>Name</strong></p>
+          <div *ngIf="inputToggle == false">
+            <p>{{ district.district_name }}</p>
+          </div>
+          <div *ngIf="inputToggle == true">
+            <input type="text" class="form-control" [(ngModel)]="edit.name" />
+          </div>
+        </span>
+        <span class="state-body-item">
+          <p><strong>State</strong></p>
+          <div *ngIf="inputToggle == false">
+            <p>{{ district.state_name }}</p>
+          </div>
+          <div *ngIf="inputToggle == true">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="edit.state"
+            /></div
+        ></span>
+        <span class="state-body-item">
+          <p><strong>Status</strong></p>
+          <div *ngIf="inputToggle == false">
+            <p>{{ district.status }}</p>
+          </div>
+          <div *ngIf="inputToggle == true">
+            <span class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+                che
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Active
+              </label>
+            </span>
+            <span class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Inactive
+              </label>
+            </span>
+          </div></span
+        >
+      </div>
+      <div class="col-8"  ></div>
+    </div>
+  </div>
+</div>

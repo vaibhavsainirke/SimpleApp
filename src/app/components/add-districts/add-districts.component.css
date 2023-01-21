@@ -1,0 +1,22 @@
+.add-svg {
+    padding-right: 4px;
+  }
+  .body{
+      background-color: rgb(215, 215, 218);
+      height: 100vh;
+  }
+  .state-body{
+      background-color:white ;
+      border: 1px solid rgb(182, 179, 179);
+      border-radius: 5px;
+      height: 400px;
+  }
+  .icon-i{
+    border: 1px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 300;
+    background-color: rgb(237, 237, 238);
+  }
