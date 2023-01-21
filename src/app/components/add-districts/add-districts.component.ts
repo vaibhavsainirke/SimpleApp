@@ -28,7 +28,7 @@ export class AddDistrictsComponent implements OnInit {
     if (!districts) {
       districts = [];
     }
-    let pushData = districts.push(districtToAdd);
+    districts.push(districtToAdd);
 
     this.cityService.saveData('districts', JSON.stringify(districts));
   }
