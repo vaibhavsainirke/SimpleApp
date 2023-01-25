@@ -20,14 +20,17 @@ export class AddDistrictsComponent implements OnInit {
     this.states = this.StatesService.states();
   }
 
-  add() {
+  addDistrict() {
     let districtToAdd = this.dataToSave;
-    
+
     let districts: any = this.cityService.getData('districts');
+
+    console.log(districts);
 
     if (!districts) {
       districts = [];
     }
+
     districts.push(districtToAdd);
 
     this.cityService.saveData('districts', JSON.stringify(districts));
